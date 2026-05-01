@@ -2,7 +2,7 @@
 set -e -u -o pipefail
 
 # Configuration - override via environment variables
-TUICR_PANE_POSITION="${TUICR_PANE_POSITION:-top}"    # top or bottom
+TUICR_PANE_POSITION="${TUICR_PANE_POSITION:-bottom}"    # top (left) or bottom (right)
 TUICR_PANE_SIZE="${TUICR_PANE_SIZE:-80}"              # ignored in zellij (uses default tiled sizing)
 
 # Colors for output
@@ -90,6 +90,7 @@ launch_tuicr_pane() {
   local output_file=""
   local done_file
   done_file=$(mktemp /tmp/tuicr-done.XXXXXX)
+  rm -f "$done_file"  # Delete immediately; the trap in the sub-script will create it on exit
   local tuicr_cmd="tuicr"
   local use_stdout=false
 
@@ -114,14 +115,18 @@ EOF
 
   # Create the split pane with tuicr
   local new_pane_id
-  new_pane_id=$(zellij action new-pane --direction down --close-on-exit --cwd "$target_dir" --name "tuicr" -- "$script_file")
+  new_pane_id=$(zellij action new-pane --direction right --close-on-exit --cwd "$target_dir" --name "tuicr" -- "$script_file")
 
-  # If top position requested, move the new pane up
-  if [[ "$TUICR_PANE_POSITION" == "top" ]]; then
-    zellij action move-pane -p "$new_pane_id" up
+  # If top position requested, move the new pane left
+  if [[ "$TUICR_PANE_POSITION" == "top" ]] && [[ -n "$new_pane_id" ]]; then
+    zellij action move-pane -p "$new_pane_id" left || log_warn "Could not move tuicr pane to top (move-pane failed)"
   fi
 
-  log_info "tuicr is running in pane $new_pane_id"
+  if [[ -n "$new_pane_id" ]]; then
+    log_info "tuicr is running in pane $new_pane_id"
+  else
+    log_info "tuicr is running in a new pane (pane ID not available)"
+  fi
   log_info "Waiting for tuicr to exit..."
 
   # Poll until tuicr exits (sentinel file created)
@@ -129,7 +134,7 @@ EOF
   local waited=0
   while [[ ! -f "$done_file" ]] && [[ $waited -lt $max_wait ]]; do
     sleep 1
-    ((waited++))
+    ((++waited))
   done
 
   if [[ ! -f "$done_file" ]]; then

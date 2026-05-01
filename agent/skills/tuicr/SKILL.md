@@ -82,7 +82,7 @@ The wrapper script supports environment variables:
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `TUICR_PANE_POSITION` | `top` | Pane position: `top` or `bottom` |
+| `TUICR_PANE_POSITION` | `bottom` | Pane position: `top` (left) or `bottom` (right) |
 | `TUICR_PANE_SIZE` | `80` | Ignored in zellij (zellij uses default tiled sizing) |
 
 Example with custom position:
