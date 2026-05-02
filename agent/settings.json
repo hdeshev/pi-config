@@ -8,6 +8,8 @@
     "./.claude/skills"
   ],
   "packages": [
-    "../../.bun/install/global/node_modules/@plannotator/pi-extension"
+    "../../.bun/install/global/node_modules/@plannotator/pi-extension",
+    "../../.bun/install/global/node_modules/context-mode",
+    "../../.bun/install/global/node_modules/pi-mcporter"
   ]
 }
