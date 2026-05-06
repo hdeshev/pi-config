@@ -1,15 +1,16 @@
 {
-  "lastChangelogVersion": "0.72.1",
+  "lastChangelogVersion": "0.73.0",
   "defaultProvider": "ollama-cloud",
-  "defaultModel": "deepseek-v4-pro:cloud",
+  "defaultModel": "deepseek-v4-flash:cloud",
   "hideThinkingBlock": true,
   "defaultThinkingLevel": "medium",
   "skills": [
     "./.claude/skills"
   ],
+  "npmCommand": ["pnpm"],
   "packages": [
-    "../../.bun/install/global/node_modules/@plannotator/pi-extension",
-    "../../.bun/install/global/node_modules/context-mode",
-    "../../.bun/install/global/node_modules/pi-mcporter"
+    "npm:@plannotator/pi-extension",
+    "npm:context-mode",
+    "npm:pi-mcporter"
   ]
 }
