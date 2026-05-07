@@ -13,12 +13,14 @@ All tooling is installed globally via **Bun**:
 | Package | Purpose |
 |---|---|
 | `@mariozechner/pi-coding-agent` | Pi coding agent |
-| `context-mode` | Context window optimization |
-| `pi-mcporter` | MCP tool proxy |
-| `mcporter` | MCP tool proxy CLI |
+| `@anthropic-ai/claude-agent-sdk` | Claude agent SDK |
+| `@ast-grep/cli` | Structural code search (ast-grep) |
+| `@fission-ai/openspec` | OpenSpec spec-driven development |
 | `@plannotator/pi-extension` | Plannotator extension |
-| `opencode-ai` | Opencode AI |
-| `repomix` | Repository packer |
+| `context-mode` | Context window optimization |
+| `megamemory` | Long-term memory / knowledge base |
+| `pi-claude-bridge` | Claude-to-Pi bridge |
+| `pi-mcporter` | MCP tool proxy |
 
 ## How Pi agent settings reference bun packages
 
