@@ -52,6 +52,14 @@
           "input": ["text"],
           "contextWindow": 1024000,
           "maxTokens": 32000
+        },
+        {
+          "id": "gemma4:31b-cloud",
+          "name": "Gemma 4 31B",
+          "reasoning": true,
+          "input": ["text", "image"],
+          "contextWindow": 262144,
+          "maxTokens": 32000
         }
       ]
     }
