@@ -1,4 +1,4 @@
 agent/sessions
 agent/auth.json
 agent/settings.json
-context-mode/sessions
+/context-mode
