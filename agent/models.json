@@ -49,6 +49,17 @@
           "maxTokens": 32000
         },
         {
+          "id": "kimi-k2.7-code:cloud",
+          "name": "Kimi K2.7 Code",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 256000,
+          "maxTokens": 32000
+        },
+        {
           "id": "glm-5.1:cloud",
           "name": "GLM-5.1",
           "reasoning": true,
