@@ -19,7 +19,6 @@ All tooling is installed globally via **Bun**:
 | `@plannotator/pi-extension` | Plannotator extension |
 | `context-mode` | Context window optimization |
 | `megamemory` | Long-term memory / knowledge base |
-| `pi-claude-bridge` | Claude-to-Pi bridge |
 | `pi-mcporter` | MCP tool proxy |
 
 ## How Pi agent settings reference bun packages

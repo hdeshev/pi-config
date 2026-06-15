@@ -1,4 +1,5 @@
 agent/sessions
 agent/auth.json
 agent/settings.json
+agent/trust.json
 /context-mode
