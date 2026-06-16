@@ -6,16 +6,6 @@
       "apiKey": "$OLLAMA_CLOUD_API_KEY",
       "models": [
         {
-          "id": "minimax-m2.7:cloud",
-          "name": "MiniMax M2.7",
-          "reasoning": true,
-          "input": [
-            "text"
-          ],
-          "contextWindow": 200000,
-          "maxTokens": 32000
-        },
-        {
           "id": "minimax-m3:cloud",
           "name": "MiniMax M3",
           "reasoning": true,
@@ -24,28 +14,6 @@
             "image"
           ],
           "contextWindow": 512000,
-          "maxTokens": 32000
-        },
-        {
-          "id": "kimi-k2.5:cloud",
-          "name": "Kimi K2.5",
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ],
-          "contextWindow": 256000,
-          "maxTokens": 32000
-        },
-        {
-          "id": "kimi-k2.6:cloud",
-          "name": "Kimi K2.6",
-          "reasoning": true,
-          "input": [
-            "text",
-            "image"
-          ],
-          "contextWindow": 256000,
           "maxTokens": 32000
         },
         {
@@ -60,13 +28,13 @@
           "maxTokens": 32000
         },
         {
-          "id": "glm-5.1:cloud",
-          "name": "GLM-5.1",
+          "id": "glm-5.2:cloud",
+          "name": "GLM-5.2",
           "reasoning": true,
           "input": [
             "text"
           ],
-          "contextWindow": 198000,
+          "contextWindow": 976000,
           "maxTokens": 32000
         },
         {
