@@ -20,6 +20,7 @@ All tooling is installed globally via **Bun**:
 | `context-mode` | Context window optimization |
 | `megamemory` | Long-term memory / knowledge base |
 | `pi-mcporter` | MCP tool proxy |
+| `pi-acp` | ACP adapter for agent-shell Emacs integration |
 
 ## How Pi agent settings reference bun packages
 
