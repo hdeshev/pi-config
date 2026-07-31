@@ -16,7 +16,6 @@ All tooling is installed globally via **Bun**:
 | `@anthropic-ai/claude-agent-sdk` | Claude agent SDK |
 | `@ast-grep/cli` | Structural code search (ast-grep) |
 | `@fission-ai/openspec` | OpenSpec spec-driven development |
-| `@plannotator/pi-extension` | Plannotator extension |
 | `context-mode` | Context window optimization |
 | `megamemory` | Long-term memory / knowledge base |
 | `pi-mcporter` | MCP tool proxy |
@@ -28,7 +27,6 @@ Pi's `agent/settings.json` uses **relative paths** to global bun packages via th
 
 ```json
 "packages": [
-  "../../.bun/install/global/node_modules/@plannotator/pi-extension",
   "../../.bun/install/global/node_modules/context-mode",
   "../../.bun/install/global/node_modules/pi-mcporter"
 ]
