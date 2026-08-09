@@ -1,6 +1,8 @@
 agent/sessions
 agent/auth.json
 agent/settings.json
+agent/models-store.json
 agent/trust.json
+agent/git
 /context-mode
 /pi-acp
