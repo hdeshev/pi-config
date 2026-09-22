@@ -2,6 +2,9 @@
   "mcpServers": {
     "context-mode": {
       "command": "context-mode"
+    },
+    "codebase-memory-mcp": {
+      "command": "/home/hd/.local/bin/codebase-memory-mcp"
     }
   }
 }
