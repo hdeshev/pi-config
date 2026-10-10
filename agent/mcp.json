@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "context-mode": {
-      "command": "context-mode"
+      "command": "/home/hd/.pi/agent/npm/node_modules/.bin/context-mode"
     },
     "codebase-memory-mcp": {
       "command": "/home/hd/.local/bin/codebase-memory-mcp"

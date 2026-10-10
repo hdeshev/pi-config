@@ -9,7 +9,9 @@ skills (mostly .NET/C# and Emacs), and a pnpm workspace in `agent/npm/` for npm 
 
 Packages are loaded via the `"packages"` array in `agent/settings.json`
 (`npm:context-mode`, `npm:pi-mcporter`, `npm:mcporter`, `npm:pi-acp`,
-`git:github.com/obra/superpowers`), resolved through the pnpm workspace.
+`npm:@sting8k/pi-vcc`, `git:github.com/DietrichGebert/ponytail`); npm packages
+resolve through the pnpm workspace in `agent/npm/`, git packages clone under
+`agent/git/`.
 `README.md` is the source of truth for installed tooling and upgrade commands.
 
 Conventions: never commit secrets or runtime state (all listed in `.gitignore`);

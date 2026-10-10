@@ -2,45 +2,48 @@
 
 ## Package Management
 
-All tooling is installed globally via **Bun**:
+Pi and its tooling are installed globally with **pnpm**:
 
 ```
-~/.bun/install/global/node_modules/
+~/.local/share/pnpm/
 ```
 
 ### Currently installed global packages
 
 | Package | Purpose |
 |---|---|
-| `@mariozechner/pi-coding-agent` | Pi coding agent |
-| `@anthropic-ai/claude-agent-sdk` | Claude agent SDK |
-| `@ast-grep/cli` | Structural code search (ast-grep) |
+| `@earendil-works/pi-coding-agent` | Pi coding agent |
+| `@agentclientprotocol/claude-agent-acp` | ACP adapter for Claude Agent |
 | `@fission-ai/openspec` | OpenSpec spec-driven development |
-| `context-mode` | Context window optimization |
-| `megamemory` | Long-term memory / knowledge base |
-| `pi-mcporter` | MCP tool proxy |
+| `likec4` | LikeC4 architecture modeling |
 | `pi-acp` | ACP adapter for agent-shell Emacs integration |
+| `tsx` | TypeScript runner |
 
-## How Pi agent settings reference bun packages
+## How Pi agent settings reference packages
 
-Pi's `agent/settings.json` uses **relative paths** to global bun packages via the `packages` array:
+Pi's `agent/settings.json` declares packages in the `packages` array using
+`npm:` and `git:` sources:
 
 ```json
 "packages": [
-  "../../.bun/install/global/node_modules/context-mode",
-  "../../.bun/install/global/node_modules/pi-mcporter"
+  "npm:context-mode",
+  "npm:pi-mcporter",
+  "git:github.com/DietrichGebert/ponytail"
 ]
 ```
 
-These paths resolve from `~/.pi/agent/` to `~/.bun/install/global/node_modules/<pkg>`.
+npm packages resolve through the pnpm workspace in `agent/npm/`; git packages
+clone under `agent/git/`.
 
-For MCP servers, the `agent/mcp.json` references commands by their binary name (since bun global `bin/` is on `PATH`):
+For MCP servers, `agent/mcp.json` points `command` at a binary — an absolute
+path into `agent/npm/node_modules/.bin/`, or a globally installed command on
+`PATH`:
 
 ```json
 {
   "mcpServers": {
     "context-mode": {
-      "command": "context-mode"
+      "command": "/home/hd/.pi/agent/npm/node_modules/.bin/context-mode"
     }
   }
 }
@@ -51,13 +54,20 @@ For MCP servers, the `agent/mcp.json` references commands by their binary name (
 ### Upgrade Pi
 
 ```bash
-bun install -g @mariozechner/pi-coding-agent@latest
+pi update          # Pi only (default)
+pi update --all    # Pi and all extensions
 ```
 
-### Upgrade all global bun packages
+Or install the latest globally with pnpm:
 
 ```bash
-bun update -g
+pnpm add -g @earendil-works/pi-coding-agent@latest
+```
+
+### Upgrade all global packages
+
+```bash
+pnpm update -g
 ```
 
 This resolves latest versions for all globally installed packages and updates them in one shot.
