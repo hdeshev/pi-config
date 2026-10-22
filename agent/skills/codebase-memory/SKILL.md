@@ -18,6 +18,8 @@ Graph tools return precise structural results in ~500 tokens vs ~80K for grep.
 | Dead code | `search_graph(max_degree=0, exclude_entry_points=true)` |
 | Cross-service edges | `query_graph` with Cypher |
 | Impact of local changes | `detect_changes()` |
+| Declaration outline of one file | `get_file_outline` |
+| Compare two indexed snapshots | `compare_graphs` |
 | Risk-classified trace | `trace_path(risk_labels=true)` |
 | Text search | `search_code` or Grep |
 
@@ -49,10 +51,11 @@ Graph tools return precise structural results in ~500 tokens vs ~80K for grep.
 - High fan-out: `search_graph(min_degree=10, relationship="CALLS", direction="outbound")`
 - High fan-in: `search_graph(min_degree=10, relationship="CALLS", direction="inbound")`
 
-## 15 MCP Tools
+## 17 MCP Tools
 `index_repository`, `index_status`, `list_projects`, `delete_project`,
 `search_graph`, `search_code`, `trace_path`, `detect_changes`,
-`query_graph`, `get_graph_schema`, `get_code_snippet`, `get_architecture`,
+`query_graph`, `get_graph_schema`, `get_code_snippet`, `get_file_outline`,
+`compare_graphs`, `get_architecture`,
 `check_index_coverage`, `manage_adr`, `ingest_traces`
 
 ## Edge Types
